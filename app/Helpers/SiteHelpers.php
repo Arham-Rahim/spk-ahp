@@ -377,17 +377,34 @@ class SiteHelpers{
         $data = SiteHelpers::hasilAHP();
         $bobot = Kriteria::all();
         $hasil = [];
-        foreach($data as $ky => $rows){
+        foreach($data as $rows){
             $hasilx = [];
-            foreach($rows as $row){
+            foreach($rows as $ky => $row){
                 $nilia = $row * $bobot[$ky]['bobot_kriteria'];
                 array_push($hasilx,  $nilia);
             }
+            
             array_push($hasil,  $hasilx);
         }
 
         return $hasil;
     }
+
+    // public static function HasilSMART(){
+    //     $data = SiteHelpers::hasilAHP();
+    //     $bobot = Kriteria::all();
+    //     $hasil = [];
+    //     foreach($data as $ky => $rows){
+    //         $hasilx = [];
+    //         foreach($rows as $row){
+    //             $nilia = $row * $bobot[$ky]['bobot_kriteria'];
+    //             array_push($hasilx,  $nilia);
+    //         }
+    //         array_push($hasil,  $hasilx);
+    //     }
+
+    //     return $hasil;
+    // }
 
     public static function HasilAkhirSMART(){
         $data = SiteHelpers::HasilSMART();

@@ -409,7 +409,7 @@
             }else{
                 console.log('gagal');
             };
-            const linkTab = $('.active.toggle_link a').attr('href');
+            const linkTab = $('a.active').attr('href');
             window.location.href = '/pembobotan/subkriteria'+linkTab;
             location.reload();
             $("#MatriksKriteria").css("display", "block");
